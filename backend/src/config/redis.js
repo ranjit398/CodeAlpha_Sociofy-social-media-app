@@ -16,6 +16,7 @@ async function connectRedis() {
       host: process.env.REDIS_HOST || 'localhost',
       port: parseInt(process.env.REDIS_PORT) || 6379,
       password: process.env.REDIS_PASSWORD || undefined,
+      tls: process.env.REDIS_HOST !== 'localhost' ? {} : undefined,
       // Fail fast — only 3 retries at startup, then give up
       retryStrategy: (times) => {
         if (times > 3) return null;
