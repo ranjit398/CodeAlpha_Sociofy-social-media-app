@@ -33,7 +33,7 @@ const Login = () => {
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-10">
-          <h1 className="font-display font-bold text-4xl text-brand-500 tracking-tight">pulse</h1>
+          <h1 className="font-display font-bold text-4xl text-brand-500 tracking-tight">sociofy</h1>
           <p className="text-zinc-500 text-sm mt-2">What's happening right now</p>
         </div>
 
@@ -82,7 +82,7 @@ const Login = () => {
         <p className="text-center text-sm text-zinc-500 mt-6">
           Don't have an account?{' '}
           <Link to="/register" className="text-brand-400 hover:text-brand-300 font-medium transition-colors">
-            Join Pulse
+            Join Sociofy
           </Link>
         </p>
       </div>

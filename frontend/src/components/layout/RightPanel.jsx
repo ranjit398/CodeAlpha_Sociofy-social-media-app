@@ -53,9 +53,10 @@ export default function RightPanel() {
   return (
     <aside className="right-panel">
       <div ref={ref} style={{ position: 'relative' }}>
-        <div className="search-wrap">
+        <div className="search-box">
           {loading ? '⏳' : <Icon.Search />}
           <input 
+            className="search-input"
             placeholder="Search people…" 
             value={query} 
             onChange={e => setQuery(e.target.value)} 
@@ -74,7 +75,7 @@ export default function RightPanel() {
                   setQuery('');
                 }}
               >
-                <Avatar user={u} size={34} />
+                <Avatar src={u.avatarUrl} name={u.displayName} size="sm" />
                 <div>
                   <div className="search-result-name" style={{ fontSize: 14, fontWeight: 600 }}>{u.displayName}</div>
                   <div className="search-result-handle" style={{ fontSize: 13, color: 'var(--text-2)' }}>@{u.username}</div>
@@ -89,7 +90,7 @@ export default function RightPanel() {
         <div className="panel-title">Suggested</div>
         {MOCK_SUGGESTIONS.map(u => (
           <div className="suggest-item" key={u.id}>
-            <Avatar user={u} size={36} />
+            <Avatar src={u.avatarUrl} name={u.displayName} size="md" />
             <div className="suggest-info">
               <div className="suggest-name">{u.displayName}</div>
               <div className="suggest-handle">@{u.username}</div>

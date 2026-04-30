@@ -22,9 +22,9 @@ export default function AuthPage() {
       <div className="auth-card">
         <div className="auth-logo">
           <div className="auth-logo-mark">✦</div>
-          <span className="auth-logo-text">Pulse</span>
+          <span className="auth-logo-text">Sociofy</span>
         </div>
-        <h1 className="auth-title">{tab === 'login' ? 'Welcome back' : 'Join Pulse'}</h1>
+        <h1 className="auth-title">{tab === 'login' ? 'Welcome back' : 'Join Sociofy'}</h1>
         <p className="auth-sub">
           {tab === 'login' 
             ? 'Sign in to your account to continue.' 

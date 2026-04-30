@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="banner.png" alt="Pulse Social Media App Banner" width="100%">
+  <img src="banner.png" alt="Sociofy Social Media App Banner" width="100%">
 </p>
 
-<h1 align="center">PULSE</h1>
+<h1 align="center">SOCIOFY</h1>
 
 <p align="center">
   <strong>A premium, full-stack social media ecosystem built for the modern web.</strong>
@@ -19,7 +19,7 @@
 
 ## ✨ Overview
 
-Pulse is not just another social media app; it's a high-performance, scalable platform designed for seamless interaction. It combines the power of the **MERN stack** with the precision of **Prisma ORM** and the speed of **Redis caching** to deliver a premium user experience.
+Sociofy is not just another social media app; it's a high-performance, scalable platform designed for seamless interaction. It combines the power of the **MERN stack** with the precision of **Prisma ORM** and the speed of **Redis caching** to deliver a premium user experience.
 
 ---
 

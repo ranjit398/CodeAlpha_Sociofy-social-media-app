@@ -42,7 +42,7 @@ export default function Sidebar({ activePage }) {
     <aside className="sidebar">
       <div className="sidebar-logo">
         <div className="sidebar-logo-mark">✦</div>
-        <span className="sidebar-logo-text">Pulse</span>
+        <span className="sidebar-logo-text">Sociofy</span>
       </div>
       <nav className="sidebar-nav">
         <div 
@@ -75,7 +75,7 @@ export default function Sidebar({ activePage }) {
         </div>
       </nav>
       <div className="sidebar-user" onClick={() => navigate(`/profile/${user?.username}`)}>
-        <Avatar user={user} size={34} />
+        <Avatar src={user?.avatarUrl} name={user?.displayName || user?.username} size="sm" />
         <div className="sidebar-user-info">
           <div className="sidebar-user-name">{user?.displayName}</div>
           <div className="sidebar-user-handle">@{user?.username}</div>

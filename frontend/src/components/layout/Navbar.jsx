@@ -101,7 +101,7 @@ const Navbar = () => {
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center gap-4">
         {/* Logo */}
         <Link to="/" className="font-display font-bold text-xl text-brand-500 tracking-tight flex-shrink-0">
-          pulse
+          sociofy
         </Link>
 
         {/* Search */}

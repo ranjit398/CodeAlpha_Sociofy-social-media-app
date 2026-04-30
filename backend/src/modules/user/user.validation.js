@@ -11,6 +11,7 @@ const updateProfileSchema = {
   body: Joi.object({
     displayName: Joi.string().min(1).max(50).optional(),
     bio: Joi.string().max(160).allow('').optional(),
+    isPrivate: Joi.boolean().optional(),
   }),
 };
 

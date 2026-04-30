@@ -1,7 +1,7 @@
 {
-  "name": "pulse-backend",
+  "name": "sociofy-backend",
   "version": "1.0.0",
-  "description": "Pulse Social Media App — Backend API",
+  "description": "Sociofy Social Media App — Backend API",
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",

@@ -40,14 +40,25 @@ const uploadToCloudinary = (buffer, folder = 'pulse', options = {}, mimeType = n
   const resourceType = isVideo ? 'video' : 'image';
 
   return new Promise((resolve, reject) => {
-    const stream = uploader.upload_stream(
-      { folder, resource_type: resourceType, ...options },
-      (error, result) => {
-        if (error) reject(error);
-        else resolve(result);
+    try {
+      const stream = uploader.upload_stream(
+        { folder, resource_type: resourceType, ...options },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+
+      if (stream) {
+        if (stream.catch) stream.catch(reject);
+        if (stream.on) stream.on('error', reject);
+        stream.end(buffer);
+      } else {
+        reject(new Error('Cloudinary upload_stream failed to initialize'));
       }
-    );
-    stream.end(buffer);
+    } catch (err) {
+      reject(err);
+    }
   });
 };
 

@@ -24,7 +24,7 @@ const startServer = async () => {
 
     // 3. Start HTTP server
     const server = app.listen(PORT, () => {
-      logger.info(`Pulse API running on port ${PORT} [${config.env}]`);
+      logger.info(`Sociofy API running on port ${PORT} [${config.env}]`);
     });
 
     // 4. Graceful shutdown

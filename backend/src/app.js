@@ -31,7 +31,7 @@ if (process.env.NODE_ENV !== 'test') {
 
 // ── Health Check ──────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => {
-res.json({ success: true, status: 'ok', message: 'Pulse API is running', timestamp: new Date().toISOString() });});
+res.json({ success: true, status: 'ok', message: 'Sociofy API is running', timestamp: new Date().toISOString() });});
 
 // ── API Routes ────────────────────────────────────────────────────────────────
 app.use('/api', apiLimiter);
