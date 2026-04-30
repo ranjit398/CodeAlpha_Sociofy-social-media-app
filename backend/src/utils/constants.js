@@ -7,8 +7,8 @@ module.exports = {
   },
 
   UPLOAD_FOLDERS: {
-    AVATAR: 'pulse/avatars',
-    POST: 'pulse/posts',
+    AVATAR: 'sociofy/avatars',
+    POST: 'sociofy/posts',
   },
 
   PAGINATION: {

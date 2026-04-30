@@ -66,7 +66,7 @@ export default function PostCard({ post, onNavigate }) {
   const handleShare = useCallback(() => {
     const url = `${window.location.origin}/post/${livePost.id}`;
     if (navigator.share) {
-      navigator.share({ title: 'Pulse Post', url });
+      navigator.share({ title: 'Sociofy Post', url });
     } else {
       navigator.clipboard.writeText(url);
       toast.success('Link copied to clipboard!');

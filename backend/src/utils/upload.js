@@ -27,7 +27,7 @@ const upload = multer({
 /**
  * Upload buffer to Cloudinary — auto-detects image vs video
  */
-const uploadToCloudinary = (buffer, folder = 'pulse', options = {}, mimeType = null) => {
+const uploadToCloudinary = (buffer, folder = 'sociofy', options = {}, mimeType = null) => {
   if (!isConfigured) {
     return Promise.reject(
       AppError.badRequest(

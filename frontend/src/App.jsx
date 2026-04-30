@@ -7,7 +7,7 @@ import FeedPage from './pages/Feed/FeedPage';
 import ProfilePage from './pages/Profile/ProfilePage';
 import ExplorePage from './pages/Explore/ExplorePage';
 import AuthPage from './pages/Auth/AuthPage';
-import PulseTester from './pages/Tester/index';
+import SociofyTester from './pages/Tester/index';
 
 function ProtectedRoute({ children }) {
   const { user } = useSelector((s) => s.auth);
@@ -44,7 +44,7 @@ export default function App() {
           <Route path="/" element={<ProtectedRoute><FeedPage /></ProtectedRoute>} />
           <Route path="/explore" element={<ProtectedRoute><ExplorePage /></ProtectedRoute>} />
           <Route path="/profile/:username" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
-          <Route path="/tester" element={<PulseTester />} />
+          <Route path="/tester" element={<SociofyTester />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

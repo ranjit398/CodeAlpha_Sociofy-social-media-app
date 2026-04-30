@@ -232,8 +232,8 @@ async function apiCall(method, path, body = null, token = null) {
 // ─── TEST DEFINITIONS ─────────────────────────────────────────────────────────
 function buildTests(state) {
   const ts = Date.now();
-  const user = { email: `tester_${ts}@pulse.dev`, password: "Test1234!", username: `tester${ts}`, displayName: "Test User" };
-  const user2 = { email: `tester2_${ts}@pulse.dev`, password: "Test1234!", username: `tester2${ts}`, displayName: "Test User 2" };
+  const user = { email: `tester_${ts}@sociofy.dev`, password: "Test1234!", username: `tester${ts}`, displayName: "Test User" };
+  const user2 = { email: `tester2_${ts}@sociofy.dev`, password: "Test1234!", username: `tester2${ts}`, displayName: "Test User 2" };
 
   return [
     // ── Health ──
@@ -324,7 +324,7 @@ function buildTests(state) {
     {
       id: "create-post", group: "Posts", name: "Create post", method: "POST", path: "/posts",
       run: async (s) => {
-        const r = await apiCall("POST", "/posts", { content: "Hello from the Pulse API tester! 🚀" }, s.accessToken);
+        const r = await apiCall("POST", "/posts", { content: "Hello from the Sociofy API tester! 🚀" }, s.accessToken);
         if (r.ok) s.postId = r.data?.data?.id;
         return r;
       },
@@ -427,7 +427,7 @@ function buildTests(state) {
     },
     {
       id: "update-profile", group: "Users", name: "Update profile", method: "PATCH", path: "/users/me/profile",
-      run: async (s) => apiCall("PATCH", "/users/me/profile", { bio: "Tested by Pulse API tester ✓" }, s.accessToken),
+      run: async (s) => apiCall("PATCH", "/users/me/profile", { bio: "Tested by Sociofy API tester ✓" }, s.accessToken),
       assert: (r) => [
         { label: "status 200", pass: r.status === 200 },
         { label: "bio updated", pass: r.data?.data?.bio?.includes("Tested") },
@@ -575,7 +575,7 @@ function ResultCard({ test, result }) {
 }
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
-export default function PulseTester() {
+export default function SociofyTester() {
   const [results, setResults] = useState({});
   const [running, setRunning] = useState(false);
   const [currentTest, setCurrentTest] = useState(null);
@@ -650,7 +650,7 @@ export default function PulseTester() {
           <div className="sidebar-header">
             <div className="logo">
               <div className="logo-mark">⚡</div>
-              <span className="logo-text">Pulse Tester</span>
+              <span className="logo-text">Sociofy Tester</span>
               <span className="logo-badge">v1</span>
             </div>
             <div className="status-bar">
@@ -708,7 +708,7 @@ export default function PulseTester() {
         <div className="main">
           <div className="topbar">
             <span className="topbar-title">
-              {currentTest ? `Running: ${tests.find(t => t.id === currentTest)?.name}` : "Pulse API Integration Tests"}
+              {currentTest ? `Running: ${tests.find(t => t.id === currentTest)?.name}` : "Sociofy API Integration Tests"}
             </span>
             <span className="topbar-url">POST http://localhost:5001/api</span>
           </div>

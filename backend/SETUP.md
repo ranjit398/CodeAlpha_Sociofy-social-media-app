@@ -1,6 +1,6 @@
 # Backend Setup Guide
 
-Complete step-by-step guide for setting up the Pulse Social Media Backend.
+Complete step-by-step guide for setting up the Sociofy Social Media Backend.
 
 ## Prerequisites
 

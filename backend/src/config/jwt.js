@@ -4,23 +4,23 @@ const config = require('./index');
 const signAccessToken = (payload) => {
   return jwt.sign(payload, config.jwt.accessSecret, {
     expiresIn: config.jwt.accessExpiry,
-    issuer: 'pulse-api',
+    issuer: 'sociofy-api',
   });
 };
 
 const signRefreshToken = (payload) => {
   return jwt.sign(payload, config.jwt.refreshSecret, {
     expiresIn: config.jwt.refreshExpiry,
-    issuer: 'pulse-api',
+    issuer: 'sociofy-api',
   });
 };
 
 const verifyAccessToken = (token) => {
-  return jwt.verify(token, config.jwt.accessSecret, { issuer: 'pulse-api' });
+  return jwt.verify(token, config.jwt.accessSecret, { issuer: 'sociofy-api' });
 };
 
 const verifyRefreshToken = (token) => {
-  return jwt.verify(token, config.jwt.refreshSecret, { issuer: 'pulse-api' });
+  return jwt.verify(token, config.jwt.refreshSecret, { issuer: 'sociofy-api' });
 };
 
 const getRefreshExpiryDate = () => {

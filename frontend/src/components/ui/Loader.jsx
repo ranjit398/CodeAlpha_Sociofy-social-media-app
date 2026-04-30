@@ -12,7 +12,7 @@ export const Spinner = ({ size = 'md', className = '' }) => {
 export const PageLoader = () => (
   <div className="fixed inset-0 bg-surface flex items-center justify-center z-50">
     <div className="flex flex-col items-center gap-4">
-      <span className="font-display font-bold text-2xl text-brand-500 tracking-tight">pulse</span>
+      <span className="font-display font-bold text-2xl text-brand-500 tracking-tight">sociofy</span>
       <Spinner size="lg" />
     </div>
   </div>

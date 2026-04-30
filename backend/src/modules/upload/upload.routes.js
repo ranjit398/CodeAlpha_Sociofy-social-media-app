@@ -14,7 +14,7 @@ router.post(
     try {
       if (!req.file) return next(AppError.badRequest('No file provided'));
 
-      const folder = req.query.type === 'avatar' ? 'pulse/avatars' : 'pulse/posts';
+      const folder = req.query.type === 'avatar' ? 'sociofy/avatars' : 'sociofy/posts';
       const result = await uploadToCloudinary(req.file.buffer, folder);
 
       res.status(201).json({
