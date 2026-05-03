@@ -1,4 +1,4 @@
-# Pulse Backend - Social Media API
+# Sociofy Backend - Social Media API
 
 A modern, scalable social media backend API built with Node.js, Express, Prisma, and PostgreSQL.
 
