@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { searchUsers, clearSearch, selectSearchResults } from '../../features/user/userSlice';
+import { useDebounce } from '../../hooks/useDebounce';
 import Avatar from '../ui/Avatar';
 
 const MOCK_SUGGESTIONS = [
@@ -37,18 +38,30 @@ export default function RightPanel() {
     return () => document.removeEventListener('mousedown', handler);
   }, [dispatch]);
 
+  const debouncedQuery = useDebounce(query, 400);
+
   useEffect(() => {
-    if (!query.trim()) {
+    if (!debouncedQuery.trim()) {
       dispatch(clearSearch());
+      setLoading(false);
       return;
     }
+
+    // Only trigger search when the debounced value changes and has length >= 1
+    let mounted = true;
     setLoading(true);
-    const t = setTimeout(async () => {
-      await dispatch(searchUsers(query));
-      setLoading(false);
-    }, 400);
-    return () => clearTimeout(t);
-  }, [query, dispatch]);
+    (async () => {
+      try {
+        await dispatch(searchUsers(debouncedQuery));
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, [debouncedQuery, dispatch]);
 
   return (
     <aside className="right-panel">
